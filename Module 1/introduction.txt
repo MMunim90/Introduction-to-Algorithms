@@ -1,0 +1,1 @@
+some sequence of steps/instruction to solve a problem is an algorithm
