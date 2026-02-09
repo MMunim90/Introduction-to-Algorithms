@@ -1,1 +1,10 @@
 some sequence of steps/instruction to solve a problem is an algorithm.
+
+
+check 2 nodes connected or not:
+    adj_mat -> O(1)
+    adj_list -> O(N)
+    adj_list -> O(N)
+
+all the connected node from a node
+    adj_list
