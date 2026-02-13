@@ -1,24 +1,22 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-vector<int> adj_list[1005];  // array of vector
+vector<int> adj_list[1005];
 bool visited[1005];
 
 void bfs(int src)
 {
-    queue<int> q;  // Space Complexity - O(V)
+    queue<int> q;
     q.push(src);
     visited[src] = true;
 
-    // Time total complexity O(V+E)
-    while (!q.empty()) // Time Complexity O(V) // V - VERTEX;
+    while (!q.empty())
     {
         int par = q.front();
         q.pop();
 
-        cout << par << " ";
 
-        for (int child : adj_list[par]) // Time Complexity O(E) // E - EDGE;
+        for(int child : adj_list[par])
         {
             if(visited[child] == false)
             {
@@ -37,14 +35,21 @@ int main()
 
     while (e--)
     {
-        int a, b;
-        cin >> a >> b;
+        int a, b; cin >> a >> b;
 
         adj_list[a].push_back(b);
         adj_list[b].push_back(a);
     }
-    
+
     memset(visited, false, sizeof(visited));
-    bfs(0);
+
+    int src, dst; cin >> src >> dst;
+    bfs(src);
+
+    if(visited[dst] == true)
+        cout << "YES" << endl;
+    else
+        cout << "NO" << endl;
+    
     return 0;
 }
