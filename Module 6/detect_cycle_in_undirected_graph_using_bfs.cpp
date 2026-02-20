@@ -58,6 +58,11 @@ int main()
             bfs(i);
     }
 
+    // for(int i=0; i<n; i++)
+    // {
+    //     cout << i << " parent: " << parent[i] << endl;
+    // }
+
     if(cycle)
         cout << "Cycle Detected\n";
     else
