@@ -4,6 +4,7 @@ using namespace std;
 vector<pair<int, int>> adj_list[1005];
 int dis[1005];
 
+// complexity => O(V*E)
 void dijkstra(int src)
 {
     queue<pair<int,int>> q;
