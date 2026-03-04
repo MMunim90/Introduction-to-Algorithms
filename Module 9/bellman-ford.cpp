@@ -28,6 +28,7 @@ int main()
         cin >> a >> b >> c;
 
         edge_list.push_back(Edge(a, b, c));
+        // edge_list.push_back(Edge(b, a, c)); //  if the graph is undirected then use this line
     }
 
     // for(auto ed : edge_list)
@@ -57,9 +58,29 @@ int main()
         }
     }
 
-    for(int i=0; i<n; i++)
+    bool cycle = false;
+    for (auto ed : edge_list)
     {
-        cout << i << " -> " << dist[i] << endl;
+        int a, b, c;
+        a = ed.a;
+        b = ed.b;
+        c = ed.c;
+
+        if (dist[a] != INT_MAX && dist[a] + c < dist[b])
+        {
+            cycle = true;
+            break;
+        }
+    }
+
+    if (cycle)
+        cout << "Negative weighted cycle Detected" << endl;
+    else
+    {
+        for (int i = 0; i < n; i++)
+        {
+            cout << i << " -> " << dist[i] << endl;
+        }
     }
 
     return 0;
