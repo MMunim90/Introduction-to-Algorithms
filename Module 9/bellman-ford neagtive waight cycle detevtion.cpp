@@ -58,9 +58,29 @@ int main()
         }
     }
 
-    for (int i = 0; i < n; i++)
+    bool cycle = false;
+    for (auto ed : edge_list)
     {
-        cout << i << " -> " << dist[i] << endl;
+        int a, b, c;
+        a = ed.a;
+        b = ed.b;
+        c = ed.c;
+
+        if (dist[a] != INT_MAX && dist[a] + c < dist[b])
+        {
+            cycle = true;
+            break;
+        }
+    }
+
+    if (cycle)
+        cout << "Negative weighted cycle Detected" << endl;
+    else
+    {
+        for (int i = 0; i < n; i++)
+        {
+            cout << i << " -> " << dist[i] << endl;
+        }
     }
 
     return 0;
