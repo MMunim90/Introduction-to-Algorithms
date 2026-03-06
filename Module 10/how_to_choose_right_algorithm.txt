@@ -1,0 +1,32 @@
+# DFS 
+Time complexity - O(V+E)
+condition 0: if the problem is only traversing the graph (Easy to code)
+
+
+condition 1: if we need to find out shortest distance or shortest path in a graph, then we need to consider these 4 algorithms
+
+condition 2: if source is fixed or single source
+
+# BFS 
+Time complexity - O(V+E)
+condition 0: Use for traversing the graph (Medium hard)
+$ where BFS didn't work - if the graph is weighted graph.
+$ where BFS work - if the source is single, graph is not weighted and the problem demand only shortest distance or shortest path.
+
+# Dijkstra
+Time complexity - O(ElogV)
+- Use Adjacency List
+$ where Dijkstra didn't work - if there a negative weight and cycle found together in a graph .
+$ where Dijkstra work - if the source is single, graph is weighted and BFS is not suitable for the problem.
+
+
+# Bellman-Ford
+Time complexity - O(VE)
+- Use Edge List
+$ where Bellman-Ford work - if the source is single, graph is weighted, BFS and Dijkstra is not suitable for the problem, and the weight is negative and the graph has a cycle.
+
+condition 2: if source is not fixed or multiple source
+
+#Floyd-Warshall
+Time complexity - O(V^3)
+- Use Adjacency Matrix
