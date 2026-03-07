@@ -15,18 +15,18 @@ $ where BFS work - if the source is single, graph is not weighted and the proble
 
 # Dijkstra
 Time complexity - O(ElogV)
-- Use Adjacency List
+- Graph representation use: Adjacency List
 $ where Dijkstra didn't work - if there a negative weight and cycle found together in a graph .
 $ where Dijkstra work - if the source is single, graph is weighted and BFS is not suitable for the problem.
 
 
 # Bellman-Ford
 Time complexity - O(VE)
-- Use Edge List
+- Graph representation use: Edge List
 $ where Bellman-Ford work - if the source is single, graph is weighted, BFS and Dijkstra is not suitable for the problem, and the weight is negative and the graph has a cycle.
 
 condition 2: if source is not fixed or multiple source
 
 #Floyd-Warshall
 Time complexity - O(V^3)
-- Use Adjacency Matrix
+- Graph representation use: Adjacency Matrix
