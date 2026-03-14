@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// time complexity - O(2^N)
 int fibo(int n)
 {
     // 1
@@ -19,10 +20,12 @@ int fibo(int n)
 
 int main()
 {
-    // cout << fibo(9);
-    for(int i=0; i<10; i++)
-    {
-        cout << fibo(i) << " ";
-    }
+    int n; cin >> n;
+    cout << fibo(n);
+
+    // for(int i=0; i<10; i++)
+    // {
+    //     cout << fibo(i) << " ";
+    // }
     return 0;
 }
