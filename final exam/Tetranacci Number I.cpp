@@ -1,25 +1,18 @@
 #include<bits/stdc++.h>
 using namespace std;
-int fibo[35];
 
-void fibonacci(int n)
+int fibo(int n)
 {
-    fibo[0] = 0;
-    fibo[1] = 1;
-    fibo[2] = 1;
-    fibo[3] = 2;
+    if(n == 0) return 0;
+    if(n == 1 || n == 2) return 1;
+    if(n == 3) return 2;
 
-    for(int i=4; i<=n; i++)
-    {
-        fibo[i] = fibo[i-1] + fibo[i-2] + fibo[i-3] + fibo[i-4]; 
-    }
-
-    cout << fibo[n] << endl;
+    return fibo(n-1) + fibo(n-2) + fibo(n-3) + fibo(n-4);
 }
 
 int main()
 {
     int n; cin >> n;
-    fibonacci(n);
+    cout << fibo(n) << endl;
     return 0;
 }
