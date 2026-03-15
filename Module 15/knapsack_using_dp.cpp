@@ -1,25 +1,27 @@
 #include<bits/stdc++.h>
 using namespace std;
 int val[1005], weight[1005];
+int dp[1005][1005];
 
-// Time Complexity O(2^N)
+// Time Complexity - O(n -> (total item number) * w -> (max_weight))
 int knapsack(int i, int max_weight)
 {
     if(i<0 || max_weight <= 0) return 0;
 
+    if(dp[i][max_weight] != -1)
+        return dp[i][max_weight];
+
     if(weight[i] <= max_weight)
     {
-        // 2 options
-        // 1. put item in the bag, 2. cannot put item in the bag.
         int opt1 = knapsack(i-1, max_weight - weight[i]) + val[i];
         int opt2 = knapsack(i-1, max_weight);
-        return max(opt1, opt2);
+        dp[i][max_weight] = max(opt1, opt2);
+        return dp[i][max_weight];
     }
     else
     {
-        // 1 option
-        // cannot put item in the bag.
-        return knapsack(i-1, max_weight);
+        dp[i][max_weight] = knapsack(i-1, max_weight);
+        return dp[i][max_weight];
     }
 }
 
@@ -34,6 +36,10 @@ int main()
         cin >> weight[i];
 
     cin >> max_weight;
+
+    for(int i=0; i<=n; i++)
+        for(int j=0; j<=max_weight; j++)
+            dp[i][j] = -1;
 
     cout << knapsack(n-1, max_weight) << endl;
 
