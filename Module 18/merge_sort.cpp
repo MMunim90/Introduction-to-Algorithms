@@ -38,6 +38,7 @@ void conquer(int crr[], int l, int mid, int r)
     }
 }
 
+// time complexity - O(NlogN)
 void divide(int arr[], int l, int r)
 {
     if(l>=r) return;
